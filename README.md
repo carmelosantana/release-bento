@@ -10,7 +10,6 @@
 ## Installation
 
 > **Note:** This package is in active development and is not yet available on Packagist.
->
 
 Add the repository to your `composer.json` file:
 
@@ -49,4 +48,4 @@ If you find **Release Bento** useful or use it in a commercial environment pleas
 
 ## License
 
-The code is licensed [MIT](https://opensource.org/licenses/MIT). The documentation is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+The code is licensed [MIT](https://opensource.org/licenses/MIT) and the documentation is licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
