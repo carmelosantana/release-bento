@@ -9,20 +9,19 @@
 
 ## Installation
 
-> **Note:** This package is in active development and is not yet available on Packagist.
+### 1. Install the package
+
+Install as a developer dependency:
+
+```bash
+composer require --dev carmelosantana/release-bento
+```
+
+### 2. Add the script
 
 Add the repository to your `composer.json` file:
 
 ```json
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/carmelosantana/release-bento"
-    }
-],
-"require-dev": {
-    "carmelosantana/release-bento": "dev-main"
-}
 "scripts": {
     "bento": [
         "CarmeloSantana\\ReleaseBento\\Package::build"
@@ -38,7 +37,7 @@ Navigate to the root of your package and run the following command:
 composer bento
 ```
 
-This will create an archive of your package in the `_builds` directory.
+Prompts will guide you through building your package. On completion an archive of your package can be found in the `_builds` directory.
 
 📌 **Note:** Add `_builds` to `.gitingore`.
 
