@@ -1,12 +1,12 @@
 {
     "name": "carmelosantana/release-bento",
     "description": "A simple package builder.",
-    "version": "0.1.0-alpha.1",
+    "version": "0.1.0-alpha.2",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Carmelosantana\\ReleaseBento\\": "src/"
+            "CarmeloSantana\\ReleaseBento\\": "src/"
         }
     },
     "require": {}
