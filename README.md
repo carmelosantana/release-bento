@@ -19,13 +19,15 @@ Add the repository to your `composer.json` file:
         "type": "vcs",
         "url": "https://github.com/carmelosantana/release-bento"
     }
-]
-```
-
-Add as a development dependency to composer.
-
-```bash
-composer require --dev carmelosantana/release-bento
+],
+"require-dev": {
+    "carmelosantana/release-bento": "dev-main"
+}
+"scripts": {
+    "bento": [
+        "CarmeloSantana\\ReleaseBento\\ReleaseBento::execute"
+    ]
+}
 ```
 
 ## Usage
@@ -37,6 +39,8 @@ composer bento
 ```
 
 This will create an archive of your package in the `_builds` directory.
+
+📌 **Note:** Add `_builds` to `.gitingore`.
 
 ## Funding
 
