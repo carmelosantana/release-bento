@@ -1,7 +1,7 @@
 {
     "name": "carmelosantana/release-bento",
     "description": "A simple package builder.",
-    "version": "0.1.0-alpha.2",
+    "version": "0.1.0-alpha.3",
     "type": "project",
     "license": "MIT",
     "autoload": {
@@ -9,5 +9,7 @@
             "CarmeloSantana\\ReleaseBento\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "symfony/process": "^6.0"
+    }
 }
