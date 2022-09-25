@@ -1,7 +1,6 @@
 {
     "name": "carmelosantana/release-bento",
     "description": "A simple package builder.",
-    "version": "0.1.0-alpha.3",
     "type": "project",
     "license": "MIT",
     "autoload": {
