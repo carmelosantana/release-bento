@@ -1,2 +1,3 @@
 _builds/
 vendor/
+composer.lock
