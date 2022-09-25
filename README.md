@@ -25,7 +25,7 @@ Add the repository to your `composer.json` file:
 }
 "scripts": {
     "bento": [
-        "CarmeloSantana\\ReleaseBento\\ReleaseBento::execute"
+        "CarmeloSantana\\ReleaseBento\\Package::build"
     ]
 }
 ```
