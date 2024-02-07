@@ -45,7 +45,6 @@ Prompts will guide you through building your package. On completion an archive o
 
 If you find **Release Bento** useful or use it in a commercial environment please consider donating today with one of the following options.
 
-- [PayPal](https://www.paypal.com/donate?hosted_button_id=5RKFT8CT6DAVE)
 - Bitcoin `bc1qhxu9yf9g5jkazy6h4ux6c2apakfr90g2rkwu45`
 - Ethereum `0x9f5D6dd018758891668BF2AC547D38515140460f`
 
