@@ -18,7 +18,7 @@ underline='\033[4m'
 reverse='\033[7m'
 
 # Get package slug.
-PACKAGE="$(basename $PWD)"
+PACKAGE="$(basename "$(pwd)")"
 
 # Welcome to Bento.
 echo -e "
