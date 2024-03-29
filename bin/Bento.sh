@@ -119,8 +119,18 @@ else
 	ZIP_SRC="$PACKAGE"
 fi
 
+# Execute composer if composer.json exists.
+if [ -f "composer.json" ]; then
+	composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --classmap-authoritative
+fi
+
 # Zip package.
 zip -r "$PACKAGE_ZIP" "$ZIP_SRC" -x $EXCLUDE_LIST
+
+# Switch back to dev composer install.
+if [ -f "composer.json" ]; then
+	composer install
+fi
 
 # Check if zip file exists.
 if [ -f "$PACKAGE_ZIP" ]; then
