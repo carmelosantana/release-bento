@@ -79,7 +79,14 @@ PACKAGE_FILE="$PACKAGE.zip"
 PACKAGE_ZIP="$PACKAGE_DIR/$PACKAGE_FILE"
 
 # Exclude list.
-EXCLUDE_LIST="*$BUILDS/* /$BUILDS/* *node_modules/* /node_modules/* Desktop.ini Thumbs.db *.DS_Store .Spotlight-V100 .Trashes .~lock.* *.idea* *.bak *.git* *.old *.log *.sass-cache* *.svn* *.vscode* *.tmp*"
+EXCLUDE_LIST="*$BUILDS/* /$BUILDS/* *node_modules/* /node_modules/* Desktop.ini Thumbs.db *.DS_Store .Spotlight-V100 .Trashes .~lock.* *.idea* *.bak *.git* *.old *.log *.sass-cache* *.svn* *.vscode* *.tmp* *.zip *.tar.gz *.tgz *.rar *.7z *.gz *.bz2 *.deb *.rpm *.jar *.apk *.exe *.msi *.dll"
+
+# Add .zipignore file to exclude list, found in root of package directory. List is separated by new lines.
+if [ -f ".zipignore" ]; then
+	while IFS= read -r line; do
+		EXCLUDE_LIST="$EXCLUDE_LIST $line"
+	done <.zipignore
+fi
 
 # Prompt user if they want to include $PACKAGE directory as root or files in $PACKAGE directory as root. Show examples of each.
 echo -e "
