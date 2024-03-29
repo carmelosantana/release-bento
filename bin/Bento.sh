@@ -18,6 +18,25 @@ bold='\033[1m'
 underline='\033[4m'
 reverse='\033[7m'
 
+# Accept args from CLI for working directory, version, and build style.
+while getopts ":d:v:p:" opt; do
+	case $opt in
+	d) DIRECTORY="$OPTARG" ;;
+	v) VERSION="$OPTARG" ;;
+	p) PARENT="$OPTARG" ;;
+	\?) echo "Invalid option: -$OPTARG" >&2 ;;
+	esac
+done
+
+if [ -n "$DIRECTORY" ]; then
+	if [ -d "$DIRECTORY" ]; then
+		cd "$DIRECTORY"
+	else
+		echo -e "${red}Directory not found.${default}"
+		exit 1
+	fi
+fi
+
 # Get package slug.
 PACKAGE="$(basename "$(pwd)")"
 
