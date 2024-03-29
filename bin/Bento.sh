@@ -1,4 +1,5 @@
 #!/bin/bash
+# v0.1.2
 
 # Colors and formatting.
 red='\033[0;31m'
