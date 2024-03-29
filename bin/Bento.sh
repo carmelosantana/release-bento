@@ -49,11 +49,15 @@ echo -e "
     A simple package builder.
 "
 
-# Ask user for version, if not use current timestamp.
-echo -e "${yellow}•${default} Enter version number or leave blank to use current timestamp."
-read -r -p "Version: " VERSION
-if [ -z "$VERSION" ]; then
-	VERSION="$(date +%s)"
+# Check VERSION if already set, if not Ask user for version, if not use current timestamp.
+if [ -n "$VERSION" ]; then
+	echo -e "${yellow}•${default} Using version: ${bold_blue}$VERSION${default}"
+else
+	echo -e "${yellow}•${default} Enter version number or leave blank to use current timestamp."
+	read -r -p "Version: " VERSION
+	if [ -z "$VERSION" ]; then
+		VERSION="$(date +%s)"
+	fi
 fi
 
 # Make destination directory.
@@ -93,8 +97,12 @@ ${gray}$PACKAGE.zip${default}
    ├── ${underline}vendor${default}
    └── README.md"
 
-# Ask if user wants to include $PACKAGE directory as root.
-read -r -p "Choice: " CHOICE
+# Do we include the parent directory?
+if [ -n "$PARENT" ]; then
+	CHOICE="$PARENT"
+else
+	read -r -p "Choice: " CHOICE
+fi
 
 # Navigate to $PACKAGE or $PACKAGE's parent directory.
 if [ "$CHOICE" = "2" ]; then
