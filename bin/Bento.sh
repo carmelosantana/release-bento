@@ -134,12 +134,18 @@ fi
 
 # Check if zip file exists.
 if [ -f "$PACKAGE_ZIP" ]; then
+	echo -e "${default}Package created: ${bold_blue}$PACKAGE_ZIP${default}"
+
+	if [ -f ".gitignore" ]; then
+		if ! grep -q "_builds" ".gitignore"; then
+			echo -e "${default}Add ${bold_blue}$BUILDS${default} to ${gray}.gitignore.${default}"
+		fi
+	fi
+
 	echo -e "${green}Build successful!${default}"
-	echo -e "${green}✔${default} Package created: ${bold_blue}$PACKAGE_ZIP${default}"
-	echo -e "${yellow}•${default} Add ${bold_blue}$BUILDS${default} to ${gray}.gitignore.${default}"
 	exit 0
 else
+	echo -e "${default}Package failed: ${bold_blue}$PACKAGE_ZIP${default}"
 	echo -e "${red}Build failed.${default}"
-	echo -e "${red}⨯${default} Package failed: ${bold_blue}$PACKAGE_ZIP${default}"
 	exit 1
 fi
