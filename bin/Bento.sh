@@ -1,5 +1,5 @@
 #!/bin/bash
-# v0.1.2
+# v0.1.3
 
 # Colors and formatting.
 red='\033[0;31m'
@@ -122,6 +122,11 @@ fi
 # Execute composer if composer.json exists.
 if [ -f "composer.json" ]; then
 	composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --classmap-authoritative
+fi
+
+# Check if zip file exists, if so delete it.
+if [ -f "$PACKAGE_ZIP" ]; then
+	rm "$PACKAGE_ZIP"
 fi
 
 # Zip package.
